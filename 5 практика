@@ -1,0 +1,63 @@
+
+
+import random
+
+country_dlist = [{'capital': 'Rome',
+  'name': 'Italy'},
+ {'capital': 'Tokyo',
+  'name': 'Japan'}
+ ]
+
+tot_points = 0
+a = len(country_dlist)
+for i in range(a):
+    choice = random.choice(country_dlist)
+    que = country_dlist.remove(choice)
+    capital = input("Please enter the captial for country {}: ".format(choice['name']))
+    if capital.lower() == choice['capital'].lower():
+        tot_points += 1
+print ('You scored', tot_points)
+
+
+def f(a,n):
+    a = a.split(' ')
+    m = len(a)
+    a1 = []
+    for i in range(1,m):
+        if int(a[i]) > n:
+            l = a[i]
+            a1.append(l)
+    return a1
+print('‚ведите строчку чисел через пробел')
+a = input()
+print('‚ведите число')
+n = int(input())
+print(f(a,n)) 
+
+
+a = []
+print('Введите три числа через пробел три раза')
+for i in range(1,4):
+    s = input()
+    s = s.split(' ')
+    for j in range(3):
+        a.append(int(s[j]))
+if a[0] + a[1] + a[2] == a[3] + a[4] + a[5] == a[6] + a[7] + a[8] \
+    == a[0] + a[3] + a[6] == a[1] + a[4] + a[7] == a[2] + a[5] + a[8] \
+    == a[0] + a[4] + a[8] == a[6] + a[4] + a[2]:
+    print('квадрат правильный')
+else:
+    print('квадрат неправильный')
+
+
+a = input()
+a = a.split(' ')
+te = []
+for i in range(len(a)):
+    d = a[i]
+    d = list(d)
+    d = d[0]
+    te.append(d)
+    te.append('. ')
+te = ''.join(te)
+print(te)
